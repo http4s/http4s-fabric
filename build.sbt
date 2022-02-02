@@ -24,4 +24,4 @@ developers := List(
   )
 )
 startYear := Some(2022)
-ThisBuild / tlBaseVersion := "0.11"
+ThisBuild / tlBaseVersion := "1.0.0"
