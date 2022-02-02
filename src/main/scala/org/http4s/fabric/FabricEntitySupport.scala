@@ -11,6 +11,14 @@ import fs2.Chunk
 import org.http4s.headers.`Content-Type`
 import org.http4s.{DecodeFailure, EntityDecoder, EntityEncoder, MediaType}
 
+/**
+ * Used to generate EntityDecoder and EntityEncoder for http4s using Fabric. Importing org.http4s.fabric._ should be
+ * sufficient for most use-cases, but you can optionally instantiate with decoding and encoding filters to enhance your
+ * use-case with features like snake-case conversions.
+ *
+ * @param decodeFilter used when decoding from JSON into Fabric
+ * @param encodeFilter used when encoding from Fabric into JSON
+ */
 class FabricEntitySupport(decodeFilter: ValueFilter, encodeFilter: ValueFilter) {
   implicit def decoder[T](implicit writer: Writer[T]): EntityDecoder[IO, T] =
     EntityDecoder.decodeBy(MediaType.application.json) { media =>
