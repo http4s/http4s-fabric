@@ -79,8 +79,8 @@ jobs:
       - name: Test
         run: sbt '++${{ matrix.scala }}' test
 
-      - name: Check binary compatibility
-        run: sbt '++${{ matrix.scala }}' mimaReportBinaryIssues
+#      - name: Check binary compatibility
+#        run: sbt '++${{ matrix.scala }}' mimaReportBinaryIssues
 
       - name: Generate API documentation
         run: sbt '++${{ matrix.scala }}' doc
