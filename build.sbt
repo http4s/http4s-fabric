@@ -20,7 +20,8 @@ developers := List(
     "darkfrog26",
     "Matt Hicks",
     "matt@matthicks.com",
-    url("https://github.com/darkfrog26"))
+    url("https://github.com/darkfrog26")
+  )
 )
 startYear := Some(2022)
 ThisBuild / tlBaseVersion := "0.11"
