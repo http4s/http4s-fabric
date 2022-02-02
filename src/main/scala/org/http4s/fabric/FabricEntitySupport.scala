@@ -11,7 +11,7 @@ import fs2.Chunk
 import org.http4s.headers.`Content-Type`
 import org.http4s.{DecodeFailure, EntityDecoder, EntityEncoder, MediaType}
 
-case class FabricEntitySupport(decodeFilter: ValueFilter, encodeFilter: ValueFilter) {
+class FabricEntitySupport(decodeFilter: ValueFilter, encodeFilter: ValueFilter) {
   implicit def decoder[T](implicit writer: Writer[T]): EntityDecoder[IO, T] =
     EntityDecoder.decodeBy(MediaType.application.json) { media =>
       EitherT {
