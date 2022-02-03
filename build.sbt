@@ -1,5 +1,3 @@
-enablePlugins(TypelevelCiReleasePlugin)
-
 val scala213 = "2.13.8"
 val scala212 = "2.12.15"
 val scala3 = "3.1.1"
@@ -24,4 +22,4 @@ developers := List(
   )
 )
 startYear := Some(2022)
-ThisBuild / tlBaseVersion := "1.0.0-M30.1"
+ThisBuild / tlBaseVersion := "1.0"
