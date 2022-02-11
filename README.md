@@ -5,7 +5,7 @@ Provides `EntityEncoder` and `EntityDecoder` support using [Fabric](https://gith
 
 ## SBT Setup
 ```sbt
-libraryDependencies += "org.http4s" %% "http4s-fabric" % "1.0.0"
+libraryDependencies += "org.http4s" %% "http4s-fabric" % "1.0.0-M31"
 ```
 
 ## Usage

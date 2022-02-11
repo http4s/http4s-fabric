@@ -34,8 +34,12 @@ class FabricEntitySupport(decodeFilter: ValueFilter, encodeFilter: ValueFilter) 
   implicit def encoder[T](implicit reader: Reader[T]): EntityEncoder[IO, T] = EntityEncoder
     .Pure[Chunk[Byte]]
     .contramap[T] { t =>
-      val value = t.toValue.filter(encodeFilter).get
-      val string = Json.format(value)
+      val string = t match {
+        case s: String => s // Ignore String
+        case _ =>
+          val value = t.toValue.filter(encodeFilter).get
+          Json.format(value)
+      }
       val bytes = string.getBytes("UTF-8")
       Chunk.array(bytes)
     }.withContentType(`Content-Type`(MediaType.application.json))

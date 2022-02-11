@@ -8,9 +8,9 @@ scalaVersion := scala213
 crossScalaVersions := Seq(scala213, scala212, scala3)
 
 libraryDependencies ++= Seq(
-  "com.outr" %% "fabric-parse" % "1.2.4",
-  "org.http4s" %% "http4s-core" % "1.0.0-M30",
-  "org.typelevel" %% "cats-effect" % "3.3.4"
+  "com.outr" %% "fabric-parse" % "1.2.6",
+  "org.http4s" %% "http4s-core" % "1.0.0-M31",
+  "org.typelevel" %% "cats-effect" % "3.3.5"
 )
 
 developers := List(
