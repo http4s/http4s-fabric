@@ -7,9 +7,9 @@ ThisBuild / scalaVersion := scala213
 ThisBuild / crossScalaVersions := Seq(scala213, scala3)
 
 libraryDependencies ++= Seq(
-  "com.outr" %% "fabric-parse" % "1.2.6",
-  "org.http4s" %% "http4s-core" % "1.0.0-M31",
-  "org.typelevel" %% "cats-effect" % "3.3.5"
+  "com.outr" %% "fabric-parse" % "1.2.8",
+  "org.http4s" %% "http4s-core" % "1.0.0-M32",
+  "org.typelevel" %% "cats-effect" % "3.3.6"
 )
 
 developers := List(
@@ -22,4 +22,4 @@ developers := List(
 )
 startYear := Some(2022)
 ThisBuild / tlBaseVersion := "1.0"
-ThisBuild / tlSonatypeUseLegacyHost := true
+ThisBuild / tlSonatypeUseLegacyHost := false
