@@ -12,8 +12,6 @@ libraryDependencies ++= Seq(
   "org.typelevel" %% "cats-effect" % "3.3.6"
 )
 
-ThisBuild / sonatypeCredentialHost := "s01.oss.sonatype.org"
-ThisBuild / sonatypeRepository := "https://s01.oss.sonatype.org/service/local"
 developers := List(
   Developer(
     "darkfrog26",
@@ -24,4 +22,4 @@ developers := List(
 )
 startYear := Some(2022)
 ThisBuild / tlBaseVersion := "1.0"
-ThisBuild / tlSonatypeUseLegacyHost := true
+ThisBuild / tlSonatypeUseLegacyHost := false
