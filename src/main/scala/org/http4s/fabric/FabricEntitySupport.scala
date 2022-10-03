@@ -20,9 +20,9 @@ import cats.MonadThrow
 import cats.data.EitherT
 import cats.effect.IO
 import cats.implicits.catsSyntaxEitherId
-import fabric.parse.Json
 import fabric.rw._
 import fabric.filter._
+import fabric.io.{JsonFormatter, JsonParser}
 import fs2.Chunk
 import org.http4s.headers.`Content-Type`
 import org.http4s.{DecodeFailure, EntityDecoder, EntityEncoder, MediaType}
@@ -46,7 +46,7 @@ class FabricEntitySupport(
       EitherT {
         media.as[String](implicitly[MonadThrow[IO]], EntityDecoder.text).map {
           jsonString =>
-            val json = Json.parse(jsonString).filter(decodeFilter).get
+            val json = JsonParser(jsonString).filter(decodeFilter).get
             val t = writer.write(json)
             t.asRight[DecodeFailure]
         }
@@ -60,8 +60,8 @@ class FabricEntitySupport(
         val string = t match {
           case s: String => s // Ignore String
           case _ =>
-            val value = t.toValue.filter(encodeFilter).get
-            Json.format(value)
+            val value = t.json.filter(encodeFilter).get
+            JsonFormatter.Default(value)
         }
         val bytes = string.getBytes("UTF-8")
         Chunk.array(bytes)
