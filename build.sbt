@@ -1,4 +1,4 @@
-val scala213 = "2.13.8"
+val scala213 = "2.13.9"
 val scala3 = "3.1.3"
 
 name := "http4s-fabric"
@@ -7,8 +7,8 @@ ThisBuild / scalaVersion := scala213
 ThisBuild / crossScalaVersions := Seq(scala213, scala3)
 
 libraryDependencies ++= Seq(
-  "com.outr" %% "fabric-parse" % "1.3.0",
-  "org.http4s" %% "http4s-core" % "1.0.0-M35",
+  "com.outr" %% "fabric-io" % "1.6.1",
+  "org.http4s" %% "http4s-core" % "1.0.0-M37",
   "org.typelevel" %% "cats-effect" % "3.3.14"
 )
 
