@@ -1,5 +1,5 @@
 val scala213 = "2.13.9"
-val scala3 = "3.1.3"
+val scala3 = "3.2.0"
 
 name := "http4s-fabric"
 
