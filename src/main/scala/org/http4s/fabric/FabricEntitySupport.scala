@@ -20,12 +20,16 @@ import cats.MonadThrow
 import cats.data.EitherT
 import cats.effect.IO
 import cats.implicits.catsSyntaxEitherId
-import fabric.rw._
 import fabric.filter._
-import fabric.io.{JsonFormatter, JsonParser}
+import fabric.io.JsonFormatter
+import fabric.io.JsonParser
+import fabric.rw._
 import fs2.Chunk
+import org.http4s.DecodeFailure
+import org.http4s.EntityDecoder
+import org.http4s.EntityEncoder
+import org.http4s.MediaType
 import org.http4s.headers.`Content-Type`
-import org.http4s.{DecodeFailure, EntityDecoder, EntityEncoder, MediaType}
 
 /** Used to generate EntityDecoder and EntityEncoder for http4s using Fabric.
   * Importing org.http4s.fabric._ should be sufficient for most use-cases, but
