@@ -42,8 +42,8 @@ import org.http4s.headers.`Content-Type`
   *   used when encoding from Fabric into JSON
   */
 class FabricEntitySupport(
-    decodeFilter: ValueFilter,
-    encodeFilter: ValueFilter
+    decodeFilter: JsonFilter,
+    encodeFilter: JsonFilter
 ) {
   implicit def decoder[T](implicit writer: Writer[T]): EntityDecoder[IO, T] =
     EntityDecoder.decodeBy(MediaType.application.json) { media =>
