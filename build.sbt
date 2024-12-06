@@ -8,7 +8,7 @@ ThisBuild / crossScalaVersions := Seq(scala213, scala3)
 
 libraryDependencies ++= Seq(
   "org.typelevel" %% "fabric-io" % "1.11.2",
-  "org.http4s" %% "http4s-core" % "1.0.0-M40",
+  "org.http4s" %% "http4s-core" % "1.0.0-M44",
   "org.typelevel" %% "cats-effect" % "3.5.2"
 )
 
