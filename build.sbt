@@ -14,7 +14,7 @@ libraryDependencies ++= Seq(
 
   "org.typelevel" %% "fabric-io" % "1.17.1",
 
-  "org.typelevel" %% "cats-effect" % "3.5.2"
+  "org.typelevel" %% "cats-effect" % "3.5.7"
 )
 
 developers := List(
