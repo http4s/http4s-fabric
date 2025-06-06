@@ -27,4 +27,3 @@ developers := List(
 )
 startYear := Some(2022)
 ThisBuild / tlBaseVersion := "1.0"
-ThisBuild / tlSonatypeUseLegacyHost := false

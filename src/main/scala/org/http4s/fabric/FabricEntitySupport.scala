@@ -57,7 +57,7 @@ class FabricEntitySupport(
       }
     }
 
-  implicit def encoder[T](implicit reader: Reader[T]): EntityEncoder[IO, T] =
+  implicit def encoder[T](implicit rw: RW[T]): EntityEncoder[IO, T] =
     EntityEncoder
       .Pure[Chunk[Byte]]
       .contramap[T] { t =>
