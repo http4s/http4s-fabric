@@ -23,5 +23,6 @@ ThisBuild / developers := List(
     url("https://github.com/darkfrog26")
   )
 )
+ThisBuild / licenses := Seq(License.MIT)
 ThisBuild / startYear := Some(2022)
 ThisBuild / tlBaseVersion := "1.0"
