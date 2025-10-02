@@ -7,7 +7,7 @@ lazy val root = (project in file("."))
     name := "http4s-fabric",
     libraryDependencies ++= Seq(
       "org.typelevel" %% "fabric-io" % "1.17.1",
-      "org.http4s" %% "http4s-core" % "1.0.0-M44",
+      "org.http4s" %% "http4s-core" % "1.0.0-M46",
       "org.typelevel" %% "cats-effect" % "3.5.7"
     )
   )
