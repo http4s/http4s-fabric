@@ -1,14 +1,16 @@
 val scala213 = "2.13.16"
 
-val scala3 = "3.3.6"
+val scala3 = "3.3.8"
 
 lazy val root = (project in file("."))
   .settings(
     name := "http4s-fabric",
     libraryDependencies ++= Seq(
       "org.typelevel" %% "fabric-io" % "1.17.1",
-      "org.http4s" %% "http4s-core" % "1.0.0-M44",
-      "org.typelevel" %% "cats-effect" % "3.5.7"
+      
+      "org.http4s" %% "http4s-core" % "1.0.0-M48",
+      
+      "org.typelevel" %% "cats-effect" % "3.7.1"
     )
   )
 
