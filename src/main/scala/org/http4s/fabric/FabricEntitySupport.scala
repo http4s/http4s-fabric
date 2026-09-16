@@ -68,7 +68,7 @@ class FabricEntitySupport(
       .contramap[T] { t =>
         val string = t match {
           case s: String => s // Ignore String
-          case _ =>
+          case _         =>
             val value = t.json.filter(encodeFilter).get
             JsonFormatter.Default(value)
         }
